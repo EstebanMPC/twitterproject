@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Dynamic Twitter</title>
+</head>
+<body>
+    <button id="elon-btn">Elon</button>
+    <button id="bill-btn">Bill</button>
+    <div class="header-container">
+        <div id="navbar" class="navbar">
+            <a class="return"><svg class="w-6 h-6 left-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7"></path>
+            </svg></a>
+        </div>
+        <div id="banner"></div>
+    </div>
+
+    <div id="details-container" class="details-container">
+        <div id="profile-info">
+            <div id="photo-container" class="elon-pic"></div>
+            
+        </div>
+        <div>
+            <button class="follow-btn">Following</button>
+        </div>
+    </div>
+    <div class="selector">
+        <div class="tab tab-active">Tweets</div>
+        <div class="tab">Tweets & Replies</div>
+        <div class="tab">Media</div>
+        <div class="tab">Likes</div>
+    </div>
+    
+    <div class="tweets-container"></div>
+
+    <script src="index.js"></script>
+</body>
+</html>

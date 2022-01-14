@@ -1,0 +1,98 @@
+* {
+  margin: 0%;
+  padding: 0;
+  background-color: #fff;
+  font-family: "Roboto", sans-serif;
+}
+
+/* #1a202e */
+
+body {
+  width: 600px;
+  background-color: #fff;
+}
+
+.details-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 40px;
+}
+
+.elon-banner {
+  background-image: url(./img/elonmusk-cover.jpeg);
+  height: 200px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.elon-pic {
+  background-image: url(./img/elonmusk.jpg);
+  height: 135px;
+  width: 135px;
+  border: 4px solid white;
+  border-radius: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.return {
+  width: 30px;
+}
+
+.left-arrow {
+  width: 25px;
+  color: #1d9bf0;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+}
+
+.follow-btn {
+  border-radius: 50em;
+  border: none;
+  color: white;
+  background-color: #1d9bf0;
+  padding: 10px 16px;
+}
+
+.selector {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.tab {
+  padding: 16px;
+  color: #6e767d;
+}
+
+.tab-active {
+  padding: 16px;
+  color: #1d9bf0;
+  border-bottom: 4px solid #1d9bf0;
+}
+
+.calendar {
+  display: flex;
+  flex-direction: row;
+}
+
+.calendar-svg {
+  width: 15px;
+}
+
+.follower-info {
+  display: flex;
+  flex-direction: row;
+}
