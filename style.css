@@ -41,10 +41,14 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: absolute;
+  top: 22%;
+  left: 1%;
 }
 
 .return {
   width: 30px;
+  padding-left: 25px;
 }
 
 .left-arrow {
@@ -86,13 +90,32 @@ body {
 .calendar {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .calendar-svg {
-  width: 15px;
+  width: 13px;
 }
 
 .follower-info {
   display: flex;
   flex-direction: row;
+}
+
+.details {
+  margin-top: 75px;
+  padding-left: 25px;
+  line-height: 1.5rem;
+}
+
+.bold {
+  font-weight: 800;
+}
+
+.date-font {
+  color: #333;
+}
+
+.following-container {
+  justify-content: center;
 }
