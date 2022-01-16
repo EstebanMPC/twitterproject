@@ -12,9 +12,17 @@ body {
   background-color: #fff;
 }
 
+/* Fonts */
+
+.user-name {
+  font-weight: 700;
+  font-size: 20px;
+}
+
 .details-container {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 .navbar {
@@ -44,6 +52,16 @@ body {
   position: absolute;
   top: 22%;
   left: 1%;
+}
+
+.elon-tweet-pic {
+  background-image: url(./img/elonmusk.jpg);
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .return {
@@ -118,4 +136,28 @@ body {
 
 .following-container {
   justify-content: center;
+  /* width: 330px; */
+}
+
+.tweet {
+  width: 100%;
+  height: auto;
+}
+
+.tweet-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.comment-retweet {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
 }
