@@ -22,6 +22,8 @@ var user1 = {
     ]
 };
 
+
+
 var user2 = {
     userName: '@BillGates',
     displayName: 'Bill Gates',
@@ -57,8 +59,8 @@ elonButton.onclick = function() {
     var userTitle = document.createElement('div');
     userTitle.classList.add('user');
     userTitle.innerHTML = `
-        <div>${user1.displayName}</div>
-        <div>${user1.followingCount} tweets</div>
+        <div  class="user-name">${user1.displayName}</div>
+        <div style="font-size:12px;">${user1.followingCount} tweets</div>
     `;
     document.getElementById('navbar').appendChild(userTitle)
 
@@ -105,7 +107,7 @@ elonButton.onclick = function() {
                         <h5>time since</h5>
                     </div>
                     <div>
-                        <h5>${user1.tweets.i}</h5>
+                        <h5>${user1.tweets.text}</h5>
                     </div>
                     <div class="comment-retweet">
                         <div class="row">

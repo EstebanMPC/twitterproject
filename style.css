@@ -2,7 +2,6 @@
   margin: 0%;
   padding: 0;
   background-color: #fff;
-  font-family: "Roboto", sans-serif;
 }
 
 /* #1a202e */
@@ -10,6 +9,9 @@
 body {
   width: 600px;
   background-color: #fff;
+  color: #aab8c2;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
 }
 
 /* Fonts */
@@ -17,6 +19,7 @@ body {
 .user-name {
   font-weight: 700;
   font-size: 20px;
+  color: black;
 }
 
 .details-container {
@@ -85,6 +88,8 @@ body {
   color: white;
   background-color: #1d9bf0;
   padding: 10px 16px;
+  margin-right: 15px;
+  margin-top: 20px;
 }
 
 .selector {
@@ -119,7 +124,7 @@ body {
   display: flex;
   flex-direction: row;
 }
-
+/* add size to make contianer fit */
 .details {
   margin-top: 75px;
   padding-left: 25px;
@@ -127,11 +132,8 @@ body {
 }
 
 .bold {
-  font-weight: 800;
-}
-
-.date-font {
-  color: #333;
+  font-weight: 700;
+  color: black;
 }
 
 .following-container {
@@ -144,15 +146,18 @@ body {
   height: auto;
 }
 
+.tweets-container {
+}
+
 .tweet-container {
   display: flex;
   flex-direction: row;
+  height: auto;
 }
 
 .comment-retweet {
   display: flex;
   flex-direction: row;
-  width: 100%;
 }
 
 .row {
