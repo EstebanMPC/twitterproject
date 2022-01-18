@@ -53,14 +53,13 @@ var userDetails = document.getElementById('details')
 
 
 elonButton.onclick = function() {
-    console.log("itworks")
-    
+   
     // Add User details to navbar
     var userTitle = document.createElement('div');
     userTitle.classList.add('user');
     userTitle.innerHTML = `
-        <div  class="user-name">${user1.displayName}</div>
-        <div style="font-size:12px;">${user1.followingCount} tweets</div>
+        <div class="nav-user-name">${user1.displayName}</div>
+        <div class="nav-details">${user1.followingCount} tweets</div>
     `;
     document.getElementById('navbar').appendChild(userTitle)
 
@@ -92,7 +91,6 @@ elonButton.onclick = function() {
 
     // Add Tweets
 
-    
     var tweets = user1.tweets
     tweets.forEach(function(row, i) {
         var singleTweet = document.createElement('div');
@@ -102,12 +100,12 @@ elonButton.onclick = function() {
                 <div class="elon-tweet-pic"></div>
                 <div>
                     <div class="follower-info">
-                        <h5>${user1.displayName}</h5>
-                        <h5>${user1.userName}</h5>
-                        <h5>time since</h5>
+                        <h5 class="tweet-user-name">${user1.displayName}</h5>
+                        <h5 class="tweet-details">${user1.userName}</h5>
+                        <h5 class="tweet-details">38m</h5>
                     </div>
-                    <div>
-                        <h5>${user1.tweets.text}</h5>
+                    <div id="tweet-text">
+                        <h5 class="tweet-font">${user1.tweets[i].text}</h5>
                     </div>
                     <div class="comment-retweet">
                         <div class="row">
@@ -122,7 +120,12 @@ elonButton.onclick = function() {
                             <svg class="w-6 h-6" style="width:20px; fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
                             <h6>0</h6>
                         </div>
-                        <div></div>
+                        <div class="row">
+                            <svg style="width:20px; xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12" />
+                            </svg>                            
+                        </div>
+
                     </div>
                 </div>
                 <div>
@@ -132,7 +135,6 @@ elonButton.onclick = function() {
         `;
         document.getElementById('tweets-container').appendChild(singleTweet);
     })
-   
 }
 
 // Convert values into string
