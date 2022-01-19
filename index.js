@@ -103,11 +103,11 @@ elonButton.onclick = function() {
             return Math.sign(xyz)*Math.abs(xyz)
         }
     }
-    var followerCountDiv = document.createElement('p')
+    var followerCountDiv = document.createElement('span')
     followerCountDiv.classList.add('bold')
     followerCountDiv.innerText = realNum(user1.followerCount)
     document.getElementById('followers').appendChild(followerCountDiv)
-    console.log(realNum())
+   
     
     // Add Tweets
 
