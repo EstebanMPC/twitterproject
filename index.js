@@ -88,7 +88,7 @@ elonButton.onclick = function() {
         </div>
         <div class="follower-info">
             <h4><span class="bold">${user1.followingCount}</span> Following</h4>
-            <h4><span id="followers" class="bold">kFormatter</span> Followers</h4>
+            <div id="followers"> followers</div>
         </div>
     `;
     document.getElementById('profile-info').appendChild(userDetails)
@@ -104,6 +104,7 @@ elonButton.onclick = function() {
         }
     }
     var followerCountDiv = document.createElement('p')
+    followerCountDiv.classList.add('bold')
     followerCountDiv.innerText = realNum(user1.followerCount)
     document.getElementById('followers').appendChild(followerCountDiv)
     console.log(realNum())
