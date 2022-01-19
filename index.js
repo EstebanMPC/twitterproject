@@ -71,6 +71,10 @@ elonButton.onclick = function() {
     var profilePic = document.getElementById('photo-container');
     profilePic.classList.add('elon-pic')
 
+    
+
+
+    
     // Add User details to profile
 
     var userDetails = document.createElement('div')
@@ -84,11 +88,26 @@ elonButton.onclick = function() {
         </div>
         <div class="follower-info">
             <h4><span class="bold">${user1.followingCount}</span> Following</h4>
-            <h4><span class="bold">${user1.followerCount}</span> Followers</h4>
+            <h4><span id="followers" class="bold">kFormatter</span> Followers</h4>
         </div>
     `;
     document.getElementById('profile-info').appendChild(userDetails)
 
+    // numbers
+    function realNum(xyz) {
+        if (Math.abs(xyz) < 999999 && Math.abs(xyz) > 999 ) {
+           return Math.sign(xyz)*((Math.abs(xyz)/1000).toFixed(1)) + 'k' 
+        } else if (Math.abs(xyz) > 999999) {
+            return Math.sign(xyz)*((Math.abs(xyz)/1000000).toFixed(1)) + 'm'
+        } else {
+            return Math.sign(xyz)*Math.abs(xyz)
+        }
+    }
+    var followerCountDiv = document.createElement('p')
+    followerCountDiv.innerText = realNum(user1.followerCount)
+    document.getElementById('followers').appendChild(followerCountDiv)
+    console.log(realNum())
+    
     // Add Tweets
 
     var tweets = user1.tweets
@@ -125,7 +144,6 @@ elonButton.onclick = function() {
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12" />
                             </svg>                            
                         </div>
-
                     </div>
                 </div>
                 <div>
@@ -136,6 +154,9 @@ elonButton.onclick = function() {
         document.getElementById('tweets-container').appendChild(singleTweet);
     })
 }
+
+
+
 
 // Convert values into string
 

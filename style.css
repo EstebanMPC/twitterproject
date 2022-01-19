@@ -77,6 +77,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  margin-right: 5px;
 }
 
 .return {
@@ -178,6 +179,11 @@ body {
   font-weight: 400;
   margin-top: 10px;
   margin-left: 10px;
+  width: 100px;
+}
+
+.tweets-container {
+  width: 600px;
 }
 
 .tweet-container {
@@ -186,13 +192,16 @@ body {
   height: auto;
   height: 100px;
   border: 1px solid #cbd0d387;
+  padding: 10px;
+  align-items: center;
 }
 
 .comment-retweet {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
 .row {
