@@ -22,8 +22,6 @@ var user1 = {
     ]
 };
 
-
-
 var user2 = {
     userName: '@BillGates',
     displayName: 'Bill Gates',
@@ -70,10 +68,6 @@ elonButton.onclick = function() {
     // Add profile pic
     var profilePic = document.getElementById('photo-container');
     profilePic.classList.add('elon-pic')
-
-    
-
-
     
     // Add User details to profile
 
@@ -93,7 +87,7 @@ elonButton.onclick = function() {
     `;
     document.getElementById('profile-info').appendChild(userDetails)
 
-    // numbers
+    // number abbreviation function for followers
     function realNum(xyz) {
         if (Math.abs(xyz) < 999999 && Math.abs(xyz) > 999 ) {
            return Math.sign(xyz)*((Math.abs(xyz)/1000).toFixed(1)) + 'k' 
@@ -108,9 +102,9 @@ elonButton.onclick = function() {
     followerCountDiv.innerText = realNum(user1.followerCount)
     document.getElementById('followers').appendChild(followerCountDiv)
    
+    // Time since tweet posted function
     
     // Add Tweets
-
     var tweets = user1.tweets
     tweets.forEach(function(row, i) {
         var singleTweet = document.createElement('div');
@@ -126,6 +120,109 @@ elonButton.onclick = function() {
                     </div>
                     <div id="tweet-text">
                         <h5 class="tweet-font">${user1.tweets[i].text}</h5>
+                    </div>
+                    <div class="comment-retweet">
+                        <div class="row">
+                            <svg class="w-6 h-6" style="width:20px;" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
+                            <h6>0</h6>
+                        </div>
+                        <div class="row">
+                            <svg class="w-6 h-6" style="width:20px; fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                            <h6>0</h6>
+                        </div>
+                        <div class="row">
+                            <svg class="w-6 h-6" style="width:20px; fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                            <h6>0</h6>
+                        </div>
+                        <div class="row">
+                            <svg style="width:20px; xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12" />
+                            </svg>                            
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    ...
+                </div>
+            </div>
+        `;
+        document.getElementById('tweets-container').appendChild(singleTweet);
+    })
+}
+
+var billButton = document.getElementById("bill-btn")
+
+
+billButton.onclick = function() {
+   
+    // Add User details to navbar
+    var userTitle = document.createElement('div');
+    userTitle.classList.add('user');
+    userTitle.innerHTML = `
+        <div class="nav-user-name">${user2.displayName}</div>
+        <div class="nav-details">${user2.followingCount} tweets</div>
+    `;
+    document.getElementById('navbar').appendChild(userTitle)
+
+    // Add banner
+    var banner = document.getElementById('banner');
+    banner.classList.add('elon-banner')
+
+    // Add profile pic
+    var profilePic = document.getElementById('photo-container');
+    profilePic.classList.add('elon-pic')
+    
+    // Add User details to profile
+
+    var userDetails = document.createElement('div')
+    userDetails.classList.add('details')
+    userDetails.innerHTML = `
+        <h1 class="user-name">${user2.displayName}</h1>
+        <h5>${user2.userName}</h5>
+        <div class="calendar">
+            <div class="calendar-svg"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg></div>
+            <h5 class="date-font"> ${user2.joinedDate}</h5>
+        </div>
+        <div class="follower-info">
+            <h4><span class="bold">${user2.followingCount}</span> Following</h4>
+            <div id="followers"> followers</div>
+        </div>
+    `;
+    document.getElementById('profile-info').appendChild(userDetails)
+
+    // number abbreviation function for followers
+    function realNum(xyz) {
+        if (Math.abs(xyz) < 999999 && Math.abs(xyz) > 999 ) {
+           return Math.sign(xyz)*((Math.abs(xyz)/1000).toFixed(1)) + 'k' 
+        } else if (Math.abs(xyz) > 999999) {
+            return Math.sign(xyz)*((Math.abs(xyz)/1000000).toFixed(1)) + 'm'
+        } else {
+            return Math.sign(xyz)*Math.abs(xyz)
+        }
+    }
+    var followerCountDiv = document.createElement('span')
+    followerCountDiv.classList.add('bold')
+    followerCountDiv.innerText = realNum(user2.followerCount)
+    document.getElementById('followers').appendChild(followerCountDiv)
+   
+    // Time since tweet posted function
+    
+    // Add Tweets
+    var tweets = user2.tweets
+    tweets.forEach(function(row, i) {
+        var singleTweet = document.createElement('div');
+        singleTweet.classList.add('tweet')
+        singleTweet.innerHTML =`
+            <div class="tweet-container">
+                <div class="elon-tweet-pic"></div>
+                <div>
+                    <div class="follower-info">
+                        <h5 class="tweet-user-name">${user2.displayName}</h5>
+                        <h5 class="tweet-details">${user2.userName}</h5>
+                        <h5 class="tweet-details">38m</h5>
+                    </div>
+                    <div id="tweet-text">
+                        <h5 class="tweet-font">${user2.tweets[i].text}</h5>
                     </div>
                     <div class="comment-retweet">
                         <div class="row">
